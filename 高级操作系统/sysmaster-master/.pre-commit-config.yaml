@@ -1,0 +1,96 @@
+fail_fast: true
+repos:
+  - repo: "https://github.com/pre-commit/pre-commit-hooks.git"
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=100"]
+      - id: check-symlinks
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+      - id: detect-private-key
+      - id: check-executables-have-shebangs
+        files: ^(.*\.sh|.*\.py)$
+
+  - repo: local
+    hooks:
+      - id: codespell
+        name: codespell
+        description: Checks for common misspellings in text files.
+        entry: bash -c 'cargo clean;codespell -I ci/codespell_ignore_words -x ci/codespell_ignore_words -S *.rules -S vendor* -S target*'
+        language: system
+        pass_filenames: false
+        verbose: true
+      - id: cargo-override-set
+        name: cargo-override-set
+        description: unset override.
+        entry: bash -c 'rustup override set 1.57.0 || true'
+        language: system
+        pass_filenames: false
+        files: \.(rs|toml)$
+        verbose: false
+      - id: cargo-build
+        name: cargo build
+        description: build the package for errors.
+        entry: bash -c 'cargo build --all --features "default" -v'
+        language: system
+        pass_filenames: false
+        files: \.(rs|toml)$
+        verbose: true
+      - id: cargo-clippy
+        name: cargo clippy
+        description: Lint rust sources
+        entry: bash -c 'RUSTC_WRAPPER="" cargo clippy -vvv --all-targets --features "default" --all -- -Dwarnings'
+        language: system
+        pass_filenames: false
+        files: \.rs$
+        verbose: true
+      - id: cargo-fix
+        name: cargo fix
+        description: Check the package for errors.
+        entry: bash -c 'cargo fix -v --broken-code --all-targets --all --allow-dirty --allow-staged'
+        language: system
+        pass_filenames: false
+        files: \.rs$
+        verbose: true
+      - id: cargo-fmt
+        name: cargo fmt
+        description: Format files with rustfmt.
+        entry: bash -c 'cargo fmt -v --all -- --check -v'
+        language: system
+        pass_filenames: false
+        files: \.rs$
+        verbose: true
+      - id: cargo-test-tmpfile-cleanup
+        name: tmpfile cleanup
+        description: tmpfile cleanup.
+        entry: bash -c 'rm -rf target/*/reliability/'
+        language: system
+        pass_filenames: false
+        files: \.(rs|toml)$
+        verbose: true
+      - id: cargo-test
+        name: cargo test
+        description: test the package for errors.
+        entry: bash -c 'RUST_BACKTRACE=full cargo test --all-targets --all -v -- --nocapture --show-output --test-threads=1'
+        language: system
+        pass_filenames: false
+        files: \.(rs|toml)$
+        verbose: true
+      - id: cargo-override-unset
+        name: cargo-override-unset
+        description: unset override.
+        entry: bash -c 'rustup override unset || true'
+        language: system
+        pass_filenames: false
+        files: \.(rs|toml)$
+        verbose: false
+#      - id: cargo-deny
+#        name: cargo deny check
+#        description: Check cargo depencencies
+#        entry: bash -c 'cargo deny check'
+#        language: rust
+#        files: \.rs$
+#        args: []

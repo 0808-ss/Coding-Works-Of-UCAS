@@ -1,0 +1,224 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/MSI-NB/Desktop/modelsim
+T_opt
+!s110 1716345802
+VdEgenO`l4PB^kl;gBEGC;0
+04 8 4 work tb_top_0 fast 0
+=1-8c1645cd6e4a-664d5bc8-3c8-3ae0
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;2020.4;71
+R0
+T_opt1
+!s110 1716353046
+VYUXoVoO6Y>GZZU3VQ4X]@3
+04 8 4 work tb_top_1 fast 0
+=1-8c1645cd6e4a-664d7815-362-1e58
+R1
+R2
+n@_opt1
+R3
+R0
+T_opt2
+!s110 1716353385
+VEkmQbNC;icBP6kiGVM<Ec3
+04 8 4 work tb_top_2 fast 0
+=1-8c1645cd6e4a-664d7968-36a-379c
+R1
+R2
+n@_opt2
+R3
+vmatrix_pe
+Z4 !s110 1716353311
+!i10b 1
+!s100 7jE<CK>S:R:ZlGF1PGZEh1
+Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>H^:Eo6fc8j?W_Z^g7m151
+Z6 dC:/Users/16596/Desktop/modelsim
+Z7 w1683169036
+8C:/Users/16596/Desktop/modelsim/src/matrix_pe/matrix_pe.v
+FC:/Users/16596/Desktop/modelsim/src/matrix_pe/matrix_pe.v
+!i122 11
+L0 1 84
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z10 !s108 1716353311.000000
+Z11 !s107 C:/Users/16596/Desktop/modelsim/src/matrix_pe/matrix_pe.v|C:/Users/16596/Desktop/modelsim/src/matrix_pe/pe_acc.v|C:/Users/16596/Desktop/modelsim/src/matrix_pe/pe_mult.v|C:/Users/16596/Desktop/modelsim/src/matrix_pe/parallel_pe.v|C:/Users/16596/Desktop/modelsim/sim/tb_top_2.v|
+Z12 !s90 -reportprogress|300|-f|C:/Users/16596/Desktop/modelsim/sim/compile_2.f|
+!i113 0
+Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vparallel_pe
+R4
+!i10b 1
+!s100 P>Ii@m6iD0GEf=7SIaG0;0
+R5
+IN9=8GNPi?<m[61oaSH5@F1
+R6
+R7
+8C:/Users/16596/Desktop/modelsim/src/matrix_pe/parallel_pe.v
+FC:/Users/16596/Desktop/modelsim/src/matrix_pe/parallel_pe.v
+!i122 11
+L0 1 46
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+vpe_acc
+R4
+!i10b 1
+!s100 hH;S^^glz=5mN4O<CDeDe1
+R5
+I:;5VWE3><4^InWTkUjHCG0
+R6
+R7
+8C:/Users/16596/Desktop/modelsim/src/matrix_pe/pe_acc.v
+FC:/Users/16596/Desktop/modelsim/src/matrix_pe/pe_acc.v
+!i122 11
+L0 1 27
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+vpe_mult
+R4
+!i10b 1
+!s100 FAI5MO9Q2H^e1<K69mgC^2
+R5
+IgWM]LP`igYlGk?;V_IVP30
+R6
+R7
+8C:/Users/16596/Desktop/modelsim/src/matrix_pe/pe_mult.v
+FC:/Users/16596/Desktop/modelsim/src/matrix_pe/pe_mult.v
+!i122 11
+L0 1 24
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+vserial_pe
+Z14 !s110 1716352258
+!i10b 1
+!s100 SCmo_X4i0hE14d^1]m5D31
+R5
+I9KH_Ra^<eJS3nBIodk;_n2
+R6
+R7
+8C:/Users/16596/Desktop/modelsim/src/serial_pe/serial_pe.v
+FC:/Users/16596/Desktop/modelsim/src/serial_pe/serial_pe.v
+!i122 9
+L0 1 39
+R8
+R9
+r1
+!s85 0
+31
+Z15 !s108 1716352258.000000
+Z16 !s107 C:/Users/16596/Desktop/modelsim/src/serial_pe/serial_pe.v|C:/Users/16596/Desktop/modelsim/sim/tb_top_0.v|
+Z17 !s90 -reportprogress|300|-f|C:/Users/16596/Desktop/modelsim/sim/compile_0.f|
+!i113 0
+R13
+R2
+vtb_top_0
+R14
+!i10b 1
+!s100 Em94IT1gC;eDHEkI9U=Gm3
+R5
+I7?:B7=D2[nTTe;JQln2Z61
+R6
+Z18 w1716339462
+8C:/Users/16596/Desktop/modelsim/sim/tb_top_0.v
+FC:/Users/16596/Desktop/modelsim/sim/tb_top_0.v
+!i122 9
+L0 4 143
+R8
+R9
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R13
+R2
+vtb_top_1
+!s110 1716352932
+!i10b 1
+!s100 CK>F?Jm3Qc12>HG59bWij1
+R5
+IDf^E>fn4QaGWZ[f6kDD?K2
+R6
+R18
+8C:/Users/16596/Desktop/modelsim/sim/tb_top_1.v
+FC:/Users/16596/Desktop/modelsim/sim/tb_top_1.v
+!i122 10
+L0 3 136
+R8
+R9
+r1
+!s85 0
+31
+!s108 1716352932.000000
+!s107 C:/Users/16596/Desktop/modelsim/src/parallel_pe/pe_acc.v|C:/Users/16596/Desktop/modelsim/src/parallel_pe/pe_mult.v|C:/Users/16596/Desktop/modelsim/src/parallel_pe/parallel_pe.v|C:/Users/16596/Desktop/modelsim/sim/tb_top_1.v|
+!s90 -reportprogress|300|-f|C:/Users/16596/Desktop/modelsim/sim/compile_1.f|
+!i113 0
+R13
+R2
+vtb_top_2
+R4
+!i10b 1
+!s100 n@197RPR4NHoU?;`HPE:32
+R5
+IOZ:;f7T6R2EfI?Y2bja192
+R6
+R18
+8C:/Users/16596/Desktop/modelsim/sim/tb_top_2.v
+FC:/Users/16596/Desktop/modelsim/sim/tb_top_2.v
+!i122 11
+L0 3 156
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2

@@ -1,0 +1,75 @@
+
+编译的过程
+1安装git
+sudo dnf install git
+2 克隆库
+git clone https://github.com/albfan/miraclecast.git
+3 安装cmake
+sudo dnf install cmake
+4 检查systemd版本
+sudo dnf info systemd
+5 安装glib
+sudo dnf install glib2-devel
+6 安装check
+sudo dnf install check
+7 复制dbus策略文件
+sudo cp res/org.freedesktop.miracle.conf /etc/dbus-1/system.d/
+8 安装一个库
+sudo dnf install readline-devel
+9 编译过程
+cd /miraclecast
+mkdir build
+cd /build
+cmake ..
+make
+sudo make install
+
+miracle-sinkctl的帮助参数：
+Available commands:
+  list                                      List all objects
+  show <link|peer>                          Show detailed object information
+  run <link>                                Run sink on given link
+  bind <link>                               Like 'run' but bind the link name to run when it is hotplugged
+  set-friendly-name [link] <name>           Set friendly name of an object
+  set-managed <link> <yes|no>               Manage or unmnage a link
+  quit                                      Quit program
+  help                                      Print help
+// 可能的命令
+
+[root@openEuler build]# sudo miracle-wifid --help
+miracle-wifid [OPTIONS...] ...
+
+Wifi Management Daemon.
+
+  -h --help                Show this help
+     --version             Show package version
+     --log-level <lvl>     Maximum level for log messages
+     --log-time            Prefix log-messages with timestamp
+     --log-date-time       Prefix log-messages with date time
+
+  -i --interface           Choose the interface to use
+     --config-methods      Define config methods for pairing, default 'pbc'
+
+     --wpa-loglevel <lvl>  wpa_supplicant log-level
+     --wpa-syslog          wpa_supplicant use syslog
+     --use-dev             enable workaround for 'no ifname' issue
+     --lazy-managed        manage interface only when user decide to do
+     --ip-binary <path>    path to 'ip' binary [default: /bin/ip]
+
+作为接受端启动的方法：
+sudo systemctl stop NetworkManager.service
+sudo systemctl stop wpa_supplicant.service
+sudo miracle-wifid &
+sudo miracle-sinkctl
+//进入控制台
+>> list：查看网卡与联接，后面需要测试
+
+作为发送端启动的方法：
+sudo systemctl stop NetworkManager.service
+sudo systemctl stop wpa_supplicant.service
+sudo miracle-wifid &
+sudo miracle-wifictl
+//进入控制台
+select 联接号
+p2p-scan // 扫描设备
+// 后面理论上来说可以联接

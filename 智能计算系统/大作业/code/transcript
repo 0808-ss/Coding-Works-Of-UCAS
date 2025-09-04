@@ -1,0 +1,32 @@
+do run_gui_tb0_specific_waves.do
+# Cannot open macro file: run_gui_tb0_specific_waves.do
+pwd
+# D:/code
+cd ./sim
+# reading modelsim.ini
+do run_gui_tb0_specific_waves.do
+# INFO: Compiling design using build_0.do...
+# d:/code/sim
+# ** Warning: (vlib-34) Library already exists at "d:/code/sim/work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5c Lib Mapping Utility 2017.01 Jan 23 2017
+# vmap work d:/code/sim/work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5c Compiler 2017.01 Jan 23 2017
+# Start time: 00:09:58 on May 30,2025
+# vlog -reportprogress 300 -f d:/code/sim/compile_0.f 
+# -- Compiling module tb_top_0
+# -- Compiling module serial_pe
+# 
+# Top level modules:
+# 	tb_top_0
+# End time: 00:09:58 on May 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# INFO: Compilation complete.
+# INFO: Loading simulation for tb_top_0...
+# INFO: Simulation loaded into GUI.
+# INFO: Adding specific signals to wave window...
+# INFO: Signals added to wave window.
+# INFO: Running simulation (run -all)...
+# 1
+# Break in Module tb_top_0 at d:/code/sim/tb_top_0.v line 24
+# INFO: Simulation finished. Waveform is now available in the wave window.

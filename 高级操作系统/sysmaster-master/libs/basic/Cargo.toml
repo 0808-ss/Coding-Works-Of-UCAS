@@ -1,0 +1,129 @@
+[package]
+name = "basic"
+version = "1.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+constants = { path = "../constants" }
+log = { path = "../log" }
+selinux = { path = "../../libs/selinux", features = [
+    "selinux",
+], optional = true }
+
+bitflags = { version = "1.3.2", optional = true }
+pkg-config = { version = "0.3", optional = true }
+libc = { version = "0.2.140", default-features = false }
+nix = { version = "0.24", default-features = false, features = ["dir"] }
+pathdiff = { version = "0.2.1", optional = true }
+procfs = { version = "0.12.0", default-features = false, optional = true }
+rand = { version = "0.8.5", optional = true }
+snafu = { version = "0.7", features = ["std"], default-features = false }
+fnmatch-sys = "1.0.0"
+chrono = "0.4.26"
+
+[dev-dependencies]
+tempfile = "3.6.0"
+
+[features]
+default = ["full"]
+
+full = [
+    "condition",
+    "sysfs",
+    "unistd",
+    "uuid",
+    "machine",
+    "config",
+    "cargo",
+    "parse",
+    "capability",
+    "network",
+    "rlimit",
+    "cpu",
+    "disk",
+    "memory",
+    "sensors",
+    "host",
+    "process",
+    "fs",
+    "cmdline",
+    "security",
+    "string",
+    "stat",
+    "fd",
+    "mount",
+    "naming_scheme",
+    "signal",
+    "socket",
+    "os_release",
+    "show_table",
+    "io",
+    "murmurhash2",
+    "unit_name",
+    "strbuf",
+    "argv",
+    "exec",
+    "random",
+    "id128",
+    "namespace",
+    "time",
+    "path",
+    "glob",
+    "env",
+]
+
+capability = []
+cargo = ["pkg-config"]
+cmdline = ["config"]
+condition = [
+    "sysfs",
+    "unistd",
+    "capability",
+    "fd",
+    "cmdline",
+    "security",
+    "mount",
+    "nix/dir",
+    "nix/user",
+]
+argv = []
+config = []
+cpu = []
+disk = []
+exec = []
+fd = ["stat", "nix/ioctl", "nix/socket"]
+file = []
+fs = ["pathdiff", "rand", "nix/fs", "nix/user"]
+host = []
+id128 = ["bitflags", "nix/fs"]
+io = ["nix/poll", "nix/signal"]
+machine = ["nix/fs", "nix/dir", "mount", "id128", "namespace"]
+memory = []
+mount = ["fs"]
+murmurhash2 = []
+namespace = ["nix/process", "nix/fs", "nix/sched", "nix/mount"]
+naming_scheme = ["bitflags", "nix/net"]
+network = ["nix/net"]
+os_release = []
+parse = []
+process = ["procfs", "nix/dir", "nix/signal"]
+random = ["io"]
+rlimit = ["nix/resource"]
+security = ["nix/resource", "nix/socket"]
+sensors = []
+show_table = []
+signal = ["nix/signal"]
+socket = ["nix/socket", "nix/net"]
+stat = []
+strbuf = []
+string = []
+sysfs = ["nix/dir"]
+unistd = ["nix/user"]
+unit_name = []
+uuid = ["bitflags", "random"]
+time = []
+path = []
+glob = []
+env = []

@@ -1,0 +1,170 @@
+[package]
+name = "sysmaster"
+version = "1.1.0"
+edition = "2021"
+
+[dependencies]
+bitflags = "1.3.2"
+fnmatch-regex = "0.2.0"
+lazy_static = "1.4.0"
+walkdir = "2"
+unit_parser = { path = "../../libs/unit_parser" }
+
+[dependencies.basic]
+path = "../../libs/basic"
+default-features = false
+features = [
+    "signal",
+    "condition",
+    "fd",
+    "cmdline",
+    #"selinux", #uncomment this if you want to enable selinux
+    "security",
+    "mount",
+    "machine",
+    "exec",
+    "unit_name",
+]
+optional = false
+
+[dependencies.cgroup]
+path = "../../libs/cgroup"
+features = []
+optional = false
+
+[dependencies.log]
+path = "../../libs/log"
+optional = false
+
+[dependencies.clap]
+version = "3.1.8"
+features = ["derive", "std"]
+optional = false
+default-features = false
+
+[dependencies.cmdproto]
+path = "../../libs/cmdproto"
+features = []
+optional = false
+
+[dependencies.confique]
+version = "0.1.3"
+features = []
+optional = false
+default-features = false
+
+[dependencies.constants]
+path = "../../libs/constants"
+features = []
+optional = false
+
+[dependencies.core]
+path = "../libcore"
+features = []
+optional = false
+default-features = false
+
+[dependencies.dynamic_reload]
+version = "0.10.0"
+features = []
+optional = true
+
+[dependencies.event]
+path = "../../libs/event"
+features = []
+optional = false
+
+[dependencies.libc]
+version = "0.2.*"
+features = []
+optional = false
+default-features = false
+
+[dependencies.nix]
+version = "0.24"
+features = ["mount", "reboot", "net", "socket", "ioctl"]
+optional = false
+default-features = false
+
+[dependencies.once_cell]
+version = "=1.8.0"
+features = []
+optional = false
+default-features = false
+
+[dependencies.regex]
+version = "1.6.0"
+features = []
+optional = false
+default-features = false
+
+[dependencies.serde]
+version = "1.0.130"
+features = []
+optional = false
+default-features = false
+
+[dependencies.siphasher]
+version = "0.3"
+features = []
+optional = false
+default-features = false
+
+[dev-dependencies.libtests]
+path = "../../libs/libtests"
+features = []
+optional = false
+
+# Unit components plugin
+[dependencies.service]
+path = "../coms/service"
+optional = true
+default-features = false
+
+[dependencies.socket]
+path = "../coms/socket"
+optional = true
+default-features = false
+
+[dependencies.target]
+path = "../coms/target"
+optional = true
+default-features = false
+
+[dependencies.mount]
+path = "../coms/mount"
+optional = true
+default-features = false
+
+[dependencies.timer]
+path = "../coms/timer"
+optional = true
+default-features = false
+
+[dependencies.path]
+path = "../coms/path"
+optional = true
+default-features = false
+
+[features]
+default = [
+    "linux",
+    "noplugin",
+    "mount",
+    "socket",
+    "service",
+    "target",
+    "timer",
+    "path",
+]
+hongmeng = []
+linux = []
+noplugin = []
+plugin = ["dynamic_reload"]
+norecovery = []
+
+[[bin]]
+path = "src/main.rs"
+name = "sysmaster"
+proc-macro = false
+required-features = []

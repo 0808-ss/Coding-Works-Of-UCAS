@@ -1,0 +1,30 @@
+[package]
+name = "target"
+version = "1.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["dylib", "lib"]
+name = "target"
+
+[dependencies]
+basic = { path = "../../../libs/basic", default-features = false }
+core = { path = "../../libcore", default-features = false }
+log = { path = "../../../libs/log" }
+macros = { path = "../../../libs/macros" }
+constants = { path = "../../../libs/constants", optional = true }
+
+nix = { version = "0.24", default-features = false, features = [
+    "resource",
+    "poll",
+    "socket",
+] }
+once_cell = { version = "1.8.0", default-features = false }
+serde = { version = "1.0.130", default-features = false }
+
+[features]
+default = ["noplugin"]
+noplugin = []
+plugin = ["constants"]

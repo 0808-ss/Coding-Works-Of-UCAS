@@ -1,0 +1,44 @@
+[package]
+name = "socket"
+version = "1.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["dylib", "lib"]
+name = "socket"
+
+[dependencies]
+basic = { path = "../../../libs/basic", default-features = false, features = [
+    "io",
+    "fd",
+    "socket",
+    "config",
+] }
+constants = { path = "../../../libs/constants" }
+core = { path = "../../libcore", default-features = false }
+event = { path = "../../../libs/event" }
+log = { path = "../../../libs/log" }
+macros = { path = "../../../libs/macros" }
+unit_parser = { path = "../../../libs/unit_parser" }
+
+confique = { version = "0.1.3", default-features = false, features = ["toml"] }
+nix = { version = "0.24", default-features = false, features = [
+    "ioctl",
+    "poll",
+    "socket",
+    "dir",
+    "net",
+    "resource",
+] }
+once_cell = { version = "1.8.0", default-features = false }
+serde = { version = "1.0.130", default-features = false }
+
+[dev-dependencies]
+libtests = { path = "../../../libs/libtests" }
+
+[features]
+default = ["noplugin"]
+noplugin = []
+plugin = []

@@ -1,0 +1,201 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/MSI-NB/Desktop/modelsim
+T_opt
+!s110 1716345802
+VdEgenO`l4PB^kl;gBEGC;0
+04 8 4 work tb_top_0 fast 0
+=1-8c1645cd6e4a-664d5bc8-3c8-3ae0
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;2020.4;71
+R0
+T_opt1
+!s110 1716353046
+VYUXoVoO6Y>GZZU3VQ4X]@3
+04 8 4 work tb_top_1 fast 0
+=1-8c1645cd6e4a-664d7815-362-1e58
+R1
+R2
+n@_opt1
+R3
+R0
+T_opt2
+!s110 1716353385
+VEkmQbNC;icBP6kiGVM<Ec3
+04 8 4 work tb_top_2 fast 0
+=1-8c1645cd6e4a-664d7968-36a-379c
+R1
+R2
+n@_opt2
+R3
+R0
+vmatrix_pe
+Z4 !s110 1748536069
+!i10b 1
+!s100 bP<?2WbRE^Z7I57AUg:Z?3
+IM77<SG`RVW<UB:`JP:H6>1
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 dD:/code/sim
+Z7 w1741589445
+8d:/code/src/matrix_pe/matrix_pe.v
+Fd:/code/src/matrix_pe/matrix_pe.v
+L0 1
+Z8 OV;L;10.5c;63
+r1
+!s85 0
+31
+Z9 !s108 1748536069.000000
+Z10 !s107 d:/code/src/matrix_pe/matrix_pe.v|d:/code/src/matrix_pe/pe_acc.v|d:/code/src/matrix_pe/pe_mult.v|d:/code/src/matrix_pe/parallel_pe.v|d:/code/sim/tb_top_2.v|
+Z11 !s90 -reportprogress|300|-f|d:/code/sim/compile_2.f|
+!i113 1
+R2
+vparallel_pe
+R4
+!i10b 1
+!s100 NHB5BH9i0_:]PI:TA?[Dm3
+IKDVKe@1SNMPnf=]S```9B3
+R5
+R6
+R7
+8d:/code/src/matrix_pe/parallel_pe.v
+Fd:/code/src/matrix_pe/parallel_pe.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R2
+vpe_acc
+R4
+!i10b 1
+!s100 3dI>^OAWAdSlEdVI1f]n;0
+I32WI8eTQ1ST0d^7nhm8;12
+R5
+R6
+R7
+8d:/code/src/matrix_pe/pe_acc.v
+Fd:/code/src/matrix_pe/pe_acc.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R2
+vpe_mult
+R4
+!i10b 1
+!s100 9@z9hUEFHEnUN]LAl6a6h0
+IKCiWR0TJ^<i?ZY@B_16Z33
+R5
+R6
+R7
+8d:/code/src/matrix_pe/pe_mult.v
+Fd:/code/src/matrix_pe/pe_mult.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R2
+vserial_pe
+Z12 !s110 1748534998
+!i10b 1
+!s100 >O@[_dJO8BS9E1B428;SL1
+I:5n3QHMG>:YRaG9Fdca_j1
+R5
+R6
+w1741589446
+8d:/code/src/serial_pe/serial_pe.v
+Fd:/code/src/serial_pe/serial_pe.v
+L0 1
+R8
+r1
+!s85 0
+31
+Z13 !s108 1748534998.000000
+Z14 !s107 d:/code/src/serial_pe/serial_pe.v|d:/code/sim/tb_top_0.v|
+Z15 !s90 -reportprogress|300|-f|d:/code/sim/compile_0.f|
+!i113 1
+R2
+vtb_top_0
+R12
+!i10b 1
+!s100 7;e^iH@Ui2M4Z[BUGWJVV2
+I?]KgObN;18gmA;ffDo4J=2
+R5
+R6
+w1748241656
+8d:/code/sim/tb_top_0.v
+Fd:/code/sim/tb_top_0.v
+L0 4
+R8
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R2
+vtb_top_1
+!s110 1748535564
+!i10b 1
+!s100 G]47:X]Zh2jol1VoJiHZ[2
+I4gORmg;a@<Ml^[3POiJdk0
+R5
+R6
+w1748241642
+8d:/code/sim/tb_top_1.v
+Fd:/code/sim/tb_top_1.v
+L0 3
+R8
+r1
+!s85 0
+31
+!s108 1748535564.000000
+!s107 d:/code/src/parallel_pe/pe_acc.v|d:/code/src/parallel_pe/pe_mult.v|d:/code/src/parallel_pe/parallel_pe.v|d:/code/sim/tb_top_1.v|
+!s90 -reportprogress|300|-f|d:/code/sim/compile_1.f|
+!i113 1
+R2
+vtb_top_2
+R4
+!i10b 1
+!s100 nQJMS>E[P?3iEi[LGV1Dc3
+I8jTgeOQ=4@z<_B`W5?TE32
+R5
+R6
+w1748241673
+8d:/code/sim/tb_top_2.v
+Fd:/code/sim/tb_top_2.v
+L0 3
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R2

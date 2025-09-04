@@ -1,0 +1,41 @@
+[package]
+name = "core"
+version = "1.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# internal libraries
+basic = { path = "../../libs/basic", default-features = false, features = [
+    "fd",
+    "fs",
+    "rlimit",
+    "show_table",
+    "unistd",
+    "unit_name",
+] }
+cgroup = { path = "../../libs/cgroup" }
+event = { path = "../../libs/event" }
+log = { path = "../../libs/log" }
+constants = { path = "../../libs/constants" }
+unit_parser = { path = "../../libs/unit_parser" }
+
+# third libraries
+bitflags = "1.3.2"
+confique = { version = "0.1.3", default-features = false }
+heed = { version = "0.10.6", features = ["lmdb"], default-features = false }
+libc = { version = "0.2.*", default-features = false }
+nix = { version = "0.24", default-features = false, features = [
+    "resource",
+    "poll",
+    "socket",
+] }
+# regex = { version = "1.6.0", default-features = false }
+serde = { version = "1.0.130", default-features = false }
+snafu = { version = "0.7", default-features = false }
+
+[features]
+default = ["noplugin"]
+noplugin = []
+norecovery = []

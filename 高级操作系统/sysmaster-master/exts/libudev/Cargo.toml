@@ -1,0 +1,20 @@
+[package]
+name = "libudev"
+version = "1.1.0"
+edition = "2021"
+
+[lib]
+name = "udev"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+device = { path = "../../libs/device", default-features = false }
+libudev_macro = { path = "../libudev_macro" }
+libc = { default-features = false, version = "0.2.140" }
+nix = { default-features = false, version = "0.24" }
+errno = { version = "0.3.8", default-features = false }
+basic = { path = "../../libs/basic", default-features = false, features = [
+    "socket",
+] }
+hwdb = { path = "../../libs/hwdb", default-features = false }

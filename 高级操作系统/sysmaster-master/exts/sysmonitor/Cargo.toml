@@ -1,0 +1,31 @@
+[package]
+name = "sysmonitor"
+version = "1.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+basic = { path = "../../libs/basic", default-features = false, features = [
+    "stat",
+    "config",
+    "security",
+    "capability",
+    "fd",
+    "fs",
+    "process",
+] }
+
+procfs = { version = "0.12.0", default-features = false }
+serde = { version = "1.0.130", default-features = false }
+serde_derive = "1.0.130"
+toml = "0.5.8"
+nix = { version = "0.24", default-features = false, features = [
+    "signal",
+    "process",
+    "ioctl",
+    "socket",
+    "user",
+    "fs",
+    "dir",
+] }
